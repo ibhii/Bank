@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Domain"
+				   namespace="Domain.Concrete.Schema.HR" >
+<class name="Status" table="Status" schema="dbo" Guid="4ba494bd-c60a-4514-99db-f84b2664219e">
+    <id name="ID" type="Int32" ValidateRequired="true" Guid="591650b1-eaf8-4461-9f1f-a3ff1785d962">
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+      <generator class="identity" />
+    </id>
+    <property name="Title" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="f70763d4-cebf-4775-8973-9a798d290780">
+      <column name="Title" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    </property>
+    <many-to-one name="StatusType" class="StatusType" AssociationGuid="79931015-ba54-4d92-8cd2-f316f0bc7ef8" Guid="8db7bd55-af28-4f6f-8c7b-b321bf1a49bb">
+      <column name="SatusType" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+    <set name="Cofer" inverse="true" generic="true" AssociationGuid="b82c948f-b1b8-424b-b51d-50bd5ba16ea1" Guid="dc5f1878-1219-4d2c-aba3-9ae1361d7c26">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="Cofer" />
+    </set>
+    <set name="Installment" inverse="true" generic="true" AssociationGuid="275431f7-58d8-48d8-bfa5-ee954c0d4210" Guid="66eed5b7-c56f-49fa-ad09-af3925e14ac8">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="Installment" />
+    </set>
+    <set name="LateLoan" inverse="true" generic="true" AssociationGuid="2c6c17e2-7664-48dc-959a-18cf71e0a948" Guid="fcf44c01-88f6-4df9-9f61-1ed302112644">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="LateLoan" />
+    </set>
+    <set name="Loan" inverse="true" generic="true" AssociationGuid="9f8820c3-8b21-42dd-b6ab-9d85398342a4" Guid="57548190-24e5-4052-a373-b2b990f1773f">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="Loan" />
+    </set>
+    <set name="LoanInnig" inverse="true" generic="true" AssociationGuid="db332430-8ee8-4d16-be97-6e2489c95861" Guid="7391ab81-89b0-4ecd-b751-a8e28bff2c3d">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="LoanInnig" />
+    </set>
+    <set name="MemberOf" inverse="true" generic="true" AssociationGuid="d8301f50-cc3a-466d-85ce-42ca6984369f" Guid="f734cc93-b27b-4421-866e-dca8e96cbc65">
+      <key>
+        <column name="Status" />
+      </key>
+      <one-to-many class="MemberOf" />
+    </set>
+    <set name="UserAccount" inverse="true" generic="true" AssociationGuid="fa0a1760-39c8-4e75-ba0d-623520a317d4" Guid="c9ea0b93-b9bc-4fcf-97ce-7323dde9b186">
+      <key>
+        <column name="UserID" />
+      </key>
+      <one-to-many class="UserAccount" />
+    </set>
+  </class>
+
+
+
+</hibernate-mapping>

@@ -4,9 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BootCampManagement.EndPoint.MVCApp.Controllers
 {
-    public class RoleController(IUnitOfWork unitOfWork) : Controller
+    public class RoleController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork = unitOfWork;
+        private readonly IUnitOfWork _unitOfWork ;
+        public RoleController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
         public JsonResult Index()
         {

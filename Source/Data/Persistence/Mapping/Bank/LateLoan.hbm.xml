@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Domain"
+				   namespace="Domain.Concrete.Schema.HR" >
+<class name="LateLoan" table="LateLoan" schema="dbo" Guid="3dab66b0-7254-41fa-b7f0-f8f04bad3d74">
+    <id name="ID" type="Int32" ValidateRequired="true" Guid="827eb9d6-2ec2-4e9e-a9c6-8c74d8669be1">
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+      <generator class="identity" />
+    </id>
+    <property name="Price" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="c23b93a2-be30-413c-9ec4-6aacfb7a63cd">
+      <column name="Price" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    </property>
+    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="a42b2a1f-f64e-44bc-9a65-29948a858a6c">
+      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    </property>
+    <many-to-one name="Installment" class="Installment" AssociationGuid="9ef51d9d-b014-4f59-8420-752df258f69f" Guid="7ac40c59-8247-4970-8cb7-d0e2d9e6fdce">
+      <column name="InstalmentID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+    <many-to-one name="Status" class="Status" AssociationGuid="2c6c17e2-7664-48dc-959a-18cf71e0a948" Guid="fdd5270d-7bd6-438c-a081-a73d8ffc0ea0">
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+  </class>
+
+
+
+</hibernate-mapping>

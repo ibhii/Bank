@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Domain"
+				   namespace="Domain.Concrete.Schema.HR" >
+
+<class name="Not" table="Nots" schema="dbo" Guid="f727f764-b749-462b-ab9c-320205fa6f6a">
+    <id name="ID" type="Int32" ValidateRequired="true" Guid="b7603c52-07a5-4023-a38e-d96d8b654ac1">
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+      <generator class="identity" />
+    </id>
+    <property name="Title" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="c05f34c9-ee4e-41a0-86bf-e91a72c34b06">
+      <column name="Title" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    </property>
+    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="2791e56b-f222-4267-8c47-67d8cff44b30">
+      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    </property>
+    <many-to-one name="User" class="User" AssociationGuid="dd1dfe17-793c-44f0-b07b-65c94c7bdd8c" Guid="44d7d9eb-2595-4091-ac26-a93fba48399e">
+      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+  </class>
+
+
+
+</hibernate-mapping>

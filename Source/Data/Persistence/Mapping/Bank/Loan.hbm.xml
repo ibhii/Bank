@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Domain"
+				   namespace="Domain.Concrete.Schema.HR" >
+<class name="Loan" table="Loan" schema="dbo" Guid="846264a1-1009-4509-86fa-52bccbeba5a1">
+    <id name="ID" type="Int32" ValidateRequired="true" Guid="ac7220e3-c07f-4b4d-b810-b687f54ac309">
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+      <generator class="identity" />
+    </id>
+    <property name="Name" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="7bbb56fd-4b91-437f-ab69-e96a3dd09df8">
+      <column name="Name" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    </property>
+    <property name="TotalPrice" type="String" nullable="true" ValidateMaxLength="20" ValidateRequired="false" Guid="4b9cd59e-6df7-4de2-9ac1-42ce9f888faf">
+      <column name="TotalPrice" not-null="false" length="20" sql-type="nvarchar" unicode="true" />
+    </property>
+    <property name="PricePerIns" type="String" nullable="true" ValidateMaxLength="20" ValidateRequired="false" Guid="aa550477-abc8-4f0e-bf27-3c65296537f0">
+      <column name="PricePerIns" not-null="false" length="20" sql-type="nvarchar" unicode="true" />
+    </property>
+    <property name="InstallmentNum" type="Int32" nullable="true" ValidateRequired="false" Guid="6fbd290c-2af3-4c95-bf82-ee2551041dba">
+      <column name="InstallmentNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </property>
+    <property name="MemberNum" type="Int32" nullable="true" ValidateRequired="false" Guid="812f985c-4dda-4a76-b39f-e31c7fabf6e1">
+      <column name="MemberNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </property>
+    <property name="StartDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="9cc08e29-685b-4e63-a5b2-2cfc8836058a">
+      <column name="StartDate" not-null="false" sql-type="date" unicode="false" />
+    </property>
+    <property name="EndDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="d0417d6b-4576-43eb-8839-f1daade2d3b9">
+      <column name="EndDate" not-null="false" sql-type="date" unicode="false" />
+    </property>
+    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="1c2b1340-80d1-4fbf-8832-940858fa855f">
+      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    </property>
+    <many-to-one name="Cofer" class="Cofer" AssociationGuid="e7bb4a21-1b7b-42d3-8e3e-bc1e8d048d1c" Guid="acf3cb86-69cd-455b-84a0-965a455b0073">
+      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+    <many-to-one name="Status" class="Status" AssociationGuid="9f8820c3-8b21-42dd-b6ab-9d85398342a4" Guid="1ed61883-0db6-437c-8e17-e195ab9ffe97">
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+    <many-to-one name="User" class="User" AssociationGuid="3917ff42-664a-4508-b5f7-4903c06ef568" Guid="89ca59b3-6557-4965-a93c-3a35f4f6feb3">
+      <column name="Admin" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    </many-to-one>
+  </class>
+
+
+
+</hibernate-mapping>

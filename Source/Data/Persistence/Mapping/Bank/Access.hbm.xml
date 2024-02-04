@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Domain"
+				   namespace="Domain.Concrete.Schema.HR" >
+<class name="Access" table="Access" schema="dbo" Guid="37bd437b-4c21-48f3-8264-30ec72b5ae08">
+    <id name="ID" type="Int32" ValidateRequired="true" Guid="f2191477-e630-4041-9bbf-93cb6205e605">
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+      <generator class="identity" />
+    </id>
+    <property name="Title" type="String" nullable="true" ValidateMaxLength="10" ValidateRequired="false" Guid="20929468-f4ec-4aea-ab53-0a471db74943">
+      <column name="title" not-null="false" length="10" sql-type="nchar" fixed-length="true" unicode="true" />
+    </property>
+    <set name="User" inverse="true" generic="true" AssociationGuid="12042452-2c5f-4949-b4ce-6e4413a65864" Guid="5dd095ba-3741-4f9f-b77e-c69163d39b47">
+      <key>
+        <column name="Accessibility" />
+      </key>
+      <one-to-many class="User" />
+    </set>
+  </class>
+
+</hibernate-mapping>
