@@ -7,7 +7,7 @@ public static class NHExt
     public static IServiceCollection AddNHibernate(this IServiceCollection services, string connectionString)
     {
         var configuration = new Configuration();
-
+        connectionString = "Server=.;Database=Bank;TrustServerCertificate=True;Integrated Security=SSPI;";
         configuration.AddAssembly("Persistence");
 
         configuration.DataBaseIntegration(c =>
