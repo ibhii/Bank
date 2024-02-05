@@ -14,5 +14,8 @@ public class Access : BaseEntity
 
     public virtual int ID { get; set; }
     public virtual string Title { get; set; }
+    
+    public virtual List<User> Users { get; set; }
+
 
 }

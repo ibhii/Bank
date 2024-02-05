@@ -16,9 +16,9 @@ public class Message : BaseEntity
     }
 
     public virtual int ID { get; set; }
-    public virtual int? CoferID { get; set; }
-    public virtual int? UserReq { get; set; }
-    public virtual int? UserRes { get; set; }
+    public virtual Cofer? CoferID { get; set; }
+    public virtual User? UserReq { get; set; }
+    public virtual User? UserRes { get; set; }
     public virtual string Title { get; set; }
     public virtual string Descript { get; set; }
 }

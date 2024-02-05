@@ -15,8 +15,8 @@ public class LateLoan : BaseEntity
     }
 
     public virtual int ID { get; set; }
-    public virtual int? InstalmentID { get; set; }
+    public virtual Installment? InstalmentID { get; set; }
     public virtual string Price { get; set; }
-    public virtual int?  Status { get; set; }
+    public virtual Status?  Status { get; set; }
     public virtual string Description { get; set; }
 }

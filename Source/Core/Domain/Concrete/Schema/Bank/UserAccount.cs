@@ -15,8 +15,8 @@ public class UserAccount : BaseEntity
     }
 
     public virtual int ID { get; set; }
-    public virtual int? UserID { get; set; }
+    public virtual User? UserID { get; set; }
     public virtual int? AccountNum { get; set; }
-    public virtual int? Status { get; set; }
+    public virtual Status? Status { get; set; }
     public virtual string Description { get; set; }
 }

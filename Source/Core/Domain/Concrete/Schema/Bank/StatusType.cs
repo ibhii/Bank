@@ -13,4 +13,5 @@ public class StatusType : BaseEntity
 
     public virtual int ID { get; set; }
     public virtual string Type { get; set; }
+    public virtual List<Status> Status { get; set; }
 }

@@ -17,7 +17,4 @@
       <one-to-many class="MemberOf" />
     </set>
   </class>
-
-
-
 </hibernate-mapping>

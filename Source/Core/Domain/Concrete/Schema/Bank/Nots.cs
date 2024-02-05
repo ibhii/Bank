@@ -15,7 +15,7 @@ public class Nots : BaseEntity
     }
 
     public virtual int ID { get; set; }
-    public virtual int? UserID { get; set; }
     public virtual string Title { get; set; }
     public virtual string Description { get; set; }
+    public virtual User UserID { get; set; }
 }

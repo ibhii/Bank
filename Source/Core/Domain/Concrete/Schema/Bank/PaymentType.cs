@@ -13,4 +13,5 @@ public class PaymentType : BaseEntity
 
     public virtual int ID { get; set; }
     public virtual int? Type { get; set; }
+    public virtual List<Payment> Payment { get; set; }
 }

@@ -18,10 +18,10 @@ public class Payment : BaseEntity
     }
 
     public virtual int ID { get; set; }
-    public virtual int? UserID { get; set; }
-    public virtual int? CoferID { get; set; }
-    public virtual int? PaymentType { get; set; }
-    public virtual int? AccountNum { get; set; }
+    public virtual User? UserID { get; set; }
+    public virtual Cofer? CoferID { get; set; }
+    public virtual PaymentType? PaymentType { get; set; }
+    public virtual User? AccountNum { get; set; }
     public virtual DateTimeOffset? Date { get; set; }
     public virtual string Description { get; set; }
     public virtual string Picture { get; set; }

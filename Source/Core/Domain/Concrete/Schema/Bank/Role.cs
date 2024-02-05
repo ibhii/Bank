@@ -13,4 +13,6 @@ public class Role : BaseEntity
 
     public virtual int ID { get; set; }
     public virtual string TItile { get; set; }
+    public virtual List<MemberOf> MemberOfs{ get; set; }
+
 }

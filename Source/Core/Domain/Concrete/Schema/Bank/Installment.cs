@@ -21,13 +21,17 @@ public class Installment : BaseEntity
     }
 
     public virtual int Id { get; set; }
-    public virtual int? CoferID { get; set; }
-    public virtual int? UerId { get; set; }
+    public virtual Cofer? CoferID { get; set; }
+    public virtual User? UerId { get; set; }
     public virtual string NumberIns { get; set; }
     public virtual string Price { get; set; }
     public virtual DateTimeOffset? Date { get; set; }
     public virtual DateTimeOffset? ExpertDate { get; set; }
-    public virtual int? Status { get; set; }
+    public virtual Status? Status { get; set; }
     public virtual string Description { get; set; }
+    public virtual List<LateLoan> LateLoans { get; set; }
+    public virtual List<LoanInngs> Loaninngs { get; set; }
+
+
 }
  

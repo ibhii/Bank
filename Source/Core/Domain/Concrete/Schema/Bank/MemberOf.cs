@@ -16,9 +16,9 @@ public class MemberOf : BaseEntity
     }
     
     public virtual int ID { get; set; }
-    public virtual int? CoferID { get; set; }
-    public virtual int? UserID { get; set; }
-    public virtual int? RoleID { get; set; }
-    public virtual int? Status { get; set; }
+    public virtual Cofer? CoferID { get; set; }
+    public virtual User? UserID { get; set; }
+    public virtual Role? RoleID { get; set; }
+    public virtual Status? Status { get; set; }
     public virtual DateTimeOffset? Date { get; set; }
 }
