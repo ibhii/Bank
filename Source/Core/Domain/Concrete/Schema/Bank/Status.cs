@@ -8,19 +8,18 @@ public class Status : BaseEntity
 {
     public Status()
     {
-        StatusType = null;
-        Title = string.Empty;
+        
     }
 
     public virtual int ID { get; set; }
-    public virtual StatusType? StatusType { get; set; }
+    public virtual StatusType StatusType { get; set; }
     public virtual string Title { get; set; }
-    public virtual List<Installment> Installment{ get; set; }
-    public virtual List<LateLoan> LateLoan{ get; set; }
-    public virtual List<LoanInngs> LoanInng{ get; set; }
-    public virtual List<Loan> Loan{ get; set; }
-    public virtual List<MemberOf> MemberOf{ get; set; }
-    public virtual List<Cofer> Cofer { get; set; }
-    public virtual List<UserAccount> UserAccount { get; set; }
-    public virtual List<UserPassword> UserPassword { get; set; }
+    public virtual ICollection<LoanInnig> LoanInnig { get; set; }
+    public virtual ICollection<Installment> Installment{ get; set; }
+    public virtual ICollection<LateLoan> LateLoan{ get; set; }
+    public virtual ICollection<Loan> Loan{ get; set; }
+    public virtual ICollection<MemberOf> MemberOf{ get; set; }
+    public virtual ICollection<Cofer> Cofer { get; set; }
+    public virtual ICollection<UserAccount> UserAccount { get; set; }
+    public virtual ICollection<UserPassword> UserPassword { get; set; }
 }

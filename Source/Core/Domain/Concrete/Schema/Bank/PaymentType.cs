@@ -8,10 +8,9 @@ public class PaymentType : BaseEntity
 {
     public PaymentType()
     {
-        Type = null;
     }
 
     public virtual int ID { get; set; }
     public virtual int? Type { get; set; }
-    public virtual List<Payment> Payment { get; set; }
+    public virtual ICollection<Payment> Payment { get; set; }
 }

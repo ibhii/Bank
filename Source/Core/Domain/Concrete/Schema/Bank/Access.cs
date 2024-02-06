@@ -9,13 +9,12 @@ public class Access : BaseEntity
 {
     public Access()
     {
-        Title = string.Empty;
     }
 
     public virtual int ID { get; set; }
     public virtual string Title { get; set; }
     
-    public virtual List<User> Users { get; set; }
+    public virtual ICollection<User> User { get; set; }
 
 
 }

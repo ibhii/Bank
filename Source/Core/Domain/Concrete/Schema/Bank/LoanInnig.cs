@@ -6,18 +6,15 @@ namespace Domain.Concrete.Schema.Bank;
 /// موجودیت وام ها 
 /// </summary>
 
-public class LoanInngs : BaseEntity
+public class LoanInnig : BaseEntity
 {
-    public LoanInngs()
+    public LoanInnig()
     {
-        InstallmentID = null;
-        Price = string.Empty;
-        Description = string.Empty;
-        Status = null;
+        
     }
 
     public virtual int? ID { get; set; }
-    public virtual Installment? InstallmentID { get; set; }
+    public virtual Installment? Installment { get; set; }
     public virtual string Price { get; set; }
     public virtual string Description { get; set; }
     public virtual Status? Status { get; set; }

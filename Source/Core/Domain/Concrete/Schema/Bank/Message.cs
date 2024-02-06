@@ -8,17 +8,13 @@ public class Message : BaseEntity
 {
     public Message()
     {
-        CoferID = null;
-        UserReq = null;
-        UserRes = null;
-        Title = string.Empty;
-        Descript = string.Empty;
+       
     }
 
     public virtual int ID { get; set; }
-    public virtual Cofer? CoferID { get; set; }
-    public virtual User? UserReq { get; set; }
-    public virtual User? UserRes { get; set; }
+    public virtual Cofer? Cofer { get; set; }
+    public virtual User? User_UserReq { get; set; }
+    public virtual User? User_UserRes { get; set; }
     public virtual string Title { get; set; }
     public virtual string Descript { get; set; }
 }

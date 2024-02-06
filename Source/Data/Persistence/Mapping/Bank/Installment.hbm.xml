@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
- <class name="Installment" table="Installment" schema="dbo" Guid="e50910f6-9e04-4454-937b-fa98d3e607d1">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="c538bef9-a62a-4d92-be02-4fc5108fabda">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+				   namespace="Domain.Concrete.Schema.Bank" >
+ <class name="Installment" table="Installment" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" />
       <generator class="identity" />
     </id>
-    <property name="CoferID" type="Int32" nullable="true" ValidateRequired="false" Guid="d3141dd0-250e-4134-b618-05127ab30762">
-      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="CoferID" type="Int32"   >
+      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" />
     </property>
-    <property name="NumberIns" type="String" nullable="true" ValidateMaxLength="10" ValidateRequired="false" Guid="0a5d819e-3221-4deb-a7b0-b37c15c52d53">
-      <column name="NumberIns" not-null="false" length="10" sql-type="nvarchar" unicode="true" />
+    <property name="NumberIns" type="String"    >
+      <column name="NumberIns" not-null="false" length="10" sql-type="nvarchar" />
     </property>
-    <property name="Price" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="6984f6ff-df7e-43f0-85cb-e90203902b95">
-      <column name="Price" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    <property name="Price" type="String"    >
+      <column name="Price" not-null="false" length="50" sql-type="nvarchar" />
     </property>
-    <property name="Date" type="DateTime" nullable="true" ValidateRequired="false" Guid="db8fca1b-1986-4ca3-b48c-8a3a686c6ca6">
-      <column name="Date" not-null="false" sql-type="date" unicode="false" />
+    <property name="Date" type="DateTime"   >
+      <column name="Date" not-null="false" sql-type="date" />
     </property>
-    <property name="ExpertDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="ca9dc017-9a67-471e-abd0-a8ace3020a61">
-      <column name="ExpertDate" not-null="false" sql-type="date" unicode="false" />
+    <property name="ExpertDate" type="DateTime"   >
+      <column name="ExpertDate" not-null="false" sql-type="date" />
     </property>
-    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="f3552ad7-0e52-48e4-a56d-69a86534854d">
-      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    <property name="Description" type="String"   >
+      <column name="Description" not-null="false" sql-type="nvarchar" />
     </property>
-    <many-to-one name="Status" class="Status" AssociationGuid="275431f7-58d8-48d8-bfa5-ee954c0d4210" Guid="daedda84-0984-4042-9a85-5d0b9d9f03c7">
-      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Status" class="Status">
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" />
     </many-to-one>
-    <many-to-one name="User" class="User" AssociationGuid="707e6b2d-9368-4def-bbe9-259959f9eea5" Guid="2ed18420-4889-48dc-9cb1-0dc06d2bec03">
-      <column name="UerID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="User" class="User">
+      <column name="UerID" not-null="false" precision="10" scale="0" sql-type="int" />
     </many-to-one>
-    <set name="LateLoan" inverse="true" generic="true" AssociationGuid="9ef51d9d-b014-4f59-8420-752df258f69f" Guid="587e8799-526a-46b8-86cf-02e2dd522b7b">
+    <set name="LateLoan" inverse="true" generic="true">
       <key>
         <column name="InstalmentID" />
       </key>
       <one-to-many class="LateLoan" />
     </set>
-    <set name="LoanInnig" inverse="true" generic="true" AssociationGuid="c88a2c0f-1528-4996-904d-77bcce73e65d" Guid="f596b4eb-8f06-46eb-b3bf-0228d0e36ccc">
+    <set name="LoanInnig" inverse="true" generic="true">
       <key>
         <column name="InstallmentID" />
       </key>

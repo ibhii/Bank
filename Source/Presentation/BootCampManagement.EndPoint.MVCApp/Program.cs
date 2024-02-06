@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-var connection = "data source=.;initial catalog=NHExample; user id = sa ; password=123";
+var connection = "Server=.;Database=Bank;TrustServerCertificate=True;Integrated Security=SSPI;";
 builder.Services.AddNHibernate(connection);
 
 

@@ -8,23 +8,13 @@ public class Loan : BaseEntity
 {
     public Loan()
     {
-        CoferID = null;
-        Name = string.Empty;
-        Admin = null;
-        TotalPrice = string.Empty;
-        PricePerIns = string.Empty;
-        InstallmentNum = null;
-        MemberNum = null;
-        StartDate = null;
-        EndDate = null;
-        Status = null;
-        Description = string.Empty;
+        
     }
 
     public virtual int ID { get; set; }
-    public virtual Cofer? CoferID  { get; set; }
+    public virtual Cofer? Cofer  { get; set; }
     public virtual string Name { get; set; }
-    public virtual User? Admin { get; set; }
+    public virtual User? User { get; set; }
     public virtual string TotalPrice { get; set; }
     public virtual string PricePerIns { get; set; }
     public virtual int? InstallmentNum { get; set; }

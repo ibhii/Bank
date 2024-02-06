@@ -8,14 +8,11 @@ public class LateLoan : BaseEntity
 {
     public LateLoan()
     {
-        InstalmentID = null;
-        Price = string.Empty;
-        Status = null;
-        Description = string.Empty;
+        
     }
 
     public virtual int ID { get; set; }
-    public virtual Installment? InstalmentID { get; set; }
+    public virtual Installment? Installment { get; set; }
     public virtual string Price { get; set; }
     public virtual Status?  Status { get; set; }
     public virtual string Description { get; set; }

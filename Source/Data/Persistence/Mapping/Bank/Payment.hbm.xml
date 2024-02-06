@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
+				   namespace="Domain.Concrete.Schema.Bank" >
 
-<class name="Payment" table="Payment" schema="dbo" Guid="3b2ea04a-5d44-4c16-aa46-699d80e7f02e">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="40824b14-dd52-49cc-ab37-1e68de1504e5">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+<class name="Payment" table="Payment" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
       <generator class="identity" />
     </id>
-    <property name="UserID" type="Int32" nullable="true" ValidateRequired="false" Guid="33c79a40-b0ea-40f9-ad8f-69dcbedd63fa">
-      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="UserID" type="Int32"   >
+      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </property>
-    <property name="AccountNum" type="Int32" nullable="true" ValidateRequired="false" Guid="faff2f56-fe6f-4865-8b00-08c26ff3e910">
-      <column name="AccountNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="AccountNum" type="Int32"   >
+      <column name="AccountNum" not-null="false" precision="10" scale="0" sql-type="int"  />
     </property>
-    <property name="Date" type="DateTime" nullable="true" ValidateRequired="false" Guid="7597d04d-acc4-4bb8-b051-5ef56d8a0396">
-      <column name="Date" not-null="false" sql-type="date" unicode="false" />
+    <property name="Date" type="DateTime"   >
+      <column name="Date" not-null="false" sql-type="date"  />
     </property>
-    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="5d7ecb6e-4273-4da2-9418-ee3831910537">
-      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    <property name="Description" type="String"   >
+      <column name="Description" not-null="false" sql-type="nvarchar"  />
     </property>
-    <property name="Picture" type="String" nullable="true" ValidateRequired="false" Guid="85a54995-321c-40b5-a906-492581fc5f06">
-      <column name="Picture" not-null="false" sql-type="nvarchar" unicode="true" />
+    <property name="Picture" type="String"   >
+      <column name="Picture" not-null="false" sql-type="nvarchar"  />
     </property>
-    <many-to-one name="Cofer" class="Cofer" AssociationGuid="72a8da1c-2768-4fe1-8be7-2ac81b8b3f2d" Guid="a23966c8-cd36-4c4f-977a-c8625109eb24">
-      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Cofer" class="Cofer"  >
+      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="PaymentType" class="PaymentType" AssociationGuid="8e6428d5-d229-49ee-bdb5-61e2aa731426" Guid="b5748cfd-a33c-4858-86ba-2d3060a35047">
-      <column name="PaymentType" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="PaymentType" class="PaymentType"  >
+      <column name="PaymentType" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <one-to-one name="User" class="User" constrained="true" AssociationGuid="1256c3eb-15ef-4cf1-962b-f2d408bac3f3" Guid="19052a91-731c-407d-8808-650873950df7" />
+    <one-to-one name="User" class="User" constrained="true"   />
   </class>
 
 

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
- <class name="LoanInnig" table="LoanInnigs" schema="dbo" Guid="e25a1e81-accf-40a4-9e5d-7a782f8a2be9">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="f961a7a5-913d-4d0d-a482-6215e9136ffa">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+				   namespace="Domain.Concrete.Schema.Bank" >
+ <class name="LoanInnig" table="LoanInnigs" schema="dbo" >
+    <id name="ID" type="Int32" >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
     </id>
-    <property name="Price" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="11625f98-b213-4ec1-91a4-7f873dc33749">
-      <column name="Price" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    <property name="Price" type="String" >
+      <column name="Price" not-null="false" length="50" sql-type="nvarchar"  />
     </property>
-    <property name="Description" type="String" nullable="true" ValidateMaxLength="10" ValidateRequired="false" Guid="6070389e-32d7-4cc5-aa8e-4d181dd443fc">
-      <column name="Description" not-null="false" length="10" sql-type="nchar" fixed-length="true" unicode="true" />
+    <property name="Description" type="String" >
+      <column name="Description" not-null="false" length="10" sql-type="nchar"  />
     </property>
-    <many-to-one name="Installment" class="Installment" AssociationGuid="c88a2c0f-1528-4996-904d-77bcce73e65d" Guid="63bf5f8a-3f79-4b24-bed3-a092473a0f91">
-      <column name="InstallmentID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Installment" class="Installment" >
+      <column name="InstallmentID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="Status" class="Status" AssociationGuid="db332430-8ee8-4d16-be97-6e2489c95861" Guid="b06d44f0-1871-41a7-baa8-8d40f9a0ce19">
-      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Status" class="Status" >
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
   </class>
 

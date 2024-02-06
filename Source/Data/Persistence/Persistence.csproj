@@ -8,12 +8,44 @@
 
   <ItemGroup>
     <None Remove="Mapping\HR\Person.hbm.xml" />
-    <None Remove="Mapping\HR\Role.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\HR\Person.hbm.xml" />
-    <EmbeddedResource Include="Mapping\HR\Role.hbm.xml" />
+    <None Remove="Mapping\Bank\StatusType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\StatusType.hbm.xml" />
+    <None Remove="Mapping\Bank\Status.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Status.hbm.xml" />
+    <None Remove="Mapping\Bank\LoanInnig.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\LoanInnig.hbm.xml" />
+    <None Remove="Mapping\Bank\Cofer.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Cofer.hbm.xml" />
+    <None Remove="Mapping\Bank\Installment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Installment.hbm.xml" />
+    <None Remove="Mapping\Bank\LateLoan.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\LateLoan.hbm.xml" />
+    <None Remove="Mapping\Bank\Loan.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Loan.hbm.xml" />
+    <None Remove="Mapping\Bank\MemberOf.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\MemberOf.hbm.xml" />
+    <None Remove="Mapping\Bank\UserAccount.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\UserAccount.hbm.xml" />
+    <None Remove="Mapping\Bank\Message.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Message.hbm.xml" />
+    <None Remove="Mapping\Bank\Payment.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Payment.hbm.xml" />
+    <None Remove="Mapping\Bank\User.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\User.hbm.xml" />
+    <None Remove="Mapping\Bank\Not.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Not.hbm.xml" />
+    <None Remove="Mapping\Bank\UserPassword.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\UserPassword.hbm.xml" />
+    <None Remove="Mapping\Bank\Role.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Role.hbm.xml" />
+    <None Remove="Mapping\HR\Role.hbm.xml" />
+    <None Remove="Mapping\Bank\PaymentType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\PaymentType.hbm.xml" />
+    <None Remove="Mapping\Bank\Access.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Bank\Access.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>

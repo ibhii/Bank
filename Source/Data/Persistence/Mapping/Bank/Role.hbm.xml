@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
-<class name="Role" table="Role" schema="dbo" Guid="051cdc61-850a-4823-972c-541d4fd79ea4">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="b628991b-e421-44f1-bbcc-8e56d5ddb513">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+				   namespace="Domain.Concrete.Schema.Bank" >
+<class name="Role" table="Role" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
       <generator class="identity" />
     </id>
-    <property name="TItile" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="280af7ce-8781-4bff-a534-3cfaaf3d07f4">
-      <column name="TItile" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    <property name="TItile" type="String"    >
+      <column name="TItile" not-null="false" length="50" sql-type="nvarchar"  />
     </property>
-    <set name="MemberOf" inverse="true" generic="true" AssociationGuid="78cff5b4-78c8-4312-a24b-95cc8186189f" Guid="784c5211-fcf7-4789-bc00-33b81a32763b">
+    <set name="MemberOf" inverse="true" generic="true"  >
       <key>
         <column name="RoleID" />
       </key>

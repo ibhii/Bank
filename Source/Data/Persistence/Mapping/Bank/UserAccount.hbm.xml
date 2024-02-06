@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
+				   namespace="Domain.Concrete.Schema.Bank" >
 
-<class name="UserAccount" table="UserAccount" schema="dbo" Guid="6b3b9aa6-4656-4f1d-9b78-f8c173d66440">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="5da87169-8c6a-4a5d-8b4d-61fbf4228846">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
-      <generator class="identity" />
+<class name="UserAccount" table="UserAccount" schema="dbo" >
+    <id name="ID" type="Int32"  >
+        <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
+        <generator class="identity" />
     </id>
-    <property name="AccountNum" type="Int32" nullable="true" ValidateRequired="false" Guid="3fcaf166-01f0-4ca3-a666-9fa9c6d9fcc2">
-      <column name="AccountNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="AccountNum" type="Int32"   >
+        <column name="AccountNum" not-null="false" precision="10" scale="0" sql-type="int"  />
     </property>
-    <property name="Status" type="Int32" nullable="true" ValidateRequired="false" Guid="00466c92-4d9f-4eb0-8d75-8e6bbd42f911">
-      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="Status" type="Int32"   >
+        <column name="Status" not-null="false" precision="10" scale="0" sql-type="int"  />
     </property>
-    <property name="Description" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="e776934d-72d2-4d1a-b488-95944f4cab83">
-      <column name="Description" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    <property name="Description" type="String"   >
+        <column name="Description" not-null="false" length="50" sql-type="nvarchar"  />
     </property>
-    <many-to-one name="Status" class="Status" AssociationGuid="fa0a1760-39c8-4e75-ba0d-623520a317d4" Guid="97b1d4bc-afb7-4061-9aa8-864a7f07cf8a">
-      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="User" class="User"  >
+        <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="User" class="User" AssociationGuid="03b5b875-1417-4459-ac6b-b4035cf9a1cb" Guid="118bab0c-53c1-4452-8af9-7882805d4604">
-      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
-    </many-to-one>
-  </class>
+</class>
 
 
 </hibernate-mapping>

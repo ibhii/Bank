@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
+				   namespace="Domain.Concrete.Schema.Bank" >
     
- <class name="Cofer" table="Cofer" schema="dbo" Guid="eeee987b-2b48-4ea9-8a3c-de37b609afcf">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="a73708b1-1939-45d5-b847-6e3a0322a365">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+ <class name="Cofer" table="Cofer" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
       <generator class="identity" />
     </id>
-    <property name="CoferName" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="186a3ff6-6a44-44f1-b5aa-c7cdfd6617e0">
-      <column name="CoferName" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+    <property name="CoferName" type="String"    >
+      <column name="CoferName" not-null="false" length="50" sql-type="nvarchar"  />
     </property>
-    <property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="60c47004-cd00-4f7e-b552-dd019fbdbd69">
-      <column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+    <property name="Description" type="String"   >
+      <column name="Description" not-null="false" sql-type="nvarchar"  />
     </property>
-    <many-to-one name="User" class="User" AssociationGuid="ca4e5e6c-54dc-4e2f-b820-36b77036a06d" Guid="7351cc0b-3e2a-42f2-8ad9-e8092ed244a1">
-      <column name="Admin" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="User" class="User" >
+      <column name="Admin" not-null="true" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="Status" class="Status" AssociationGuid="b82c948f-b1b8-424b-b51d-50bd5ba16ea1" Guid="512e9f61-7cef-4274-9ac8-21236ff15148">
-      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Status" class="Status" >
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <set name="Loan" inverse="true" generic="true" AssociationGuid="e7bb4a21-1b7b-42d3-8e3e-bc1e8d048d1c" Guid="6bb78a45-601e-45e3-8b6e-5ec415ee4cd0">
+    <set name="Loan" inverse="true" generic="true" >
       <key>
         <column name="CoferID" />
       </key>
       <one-to-many class="Loan" />
     </set>
-    <set name="MemberOf" inverse="true" generic="true" AssociationGuid="1be3eaeb-fc11-432e-886a-211a34e6797a" Guid="d353ce65-7257-4dac-809b-b6fd5103fd8c">
+    <set name="MemberOf" inverse="true" generic="true" >
       <key>
         <column name="CoferID" />
       </key>
       <one-to-many class="MemberOf" />
     </set>
-    <set name="Message" inverse="true" generic="true" AssociationGuid="a97041f7-33bc-401f-b82a-7a95c6ebb999" Guid="7b943e2d-184b-4959-8b2f-46ab6dd5b1a6">
+    <set name="Message" inverse="true" generic="true" >
       <key>
         <column name="CoferID" />
       </key>
       <one-to-many class="Message" />
     </set>
-    <set name="Payment" inverse="true" generic="true" AssociationGuid="72a8da1c-2768-4fe1-8be7-2ac81b8b3f2d" Guid="ab2f6a2e-e016-4891-8350-4821e9e66b11">
+    <set name="Payment" inverse="true" generic="true">
       <key>
         <column name="CoferID" />
       </key>

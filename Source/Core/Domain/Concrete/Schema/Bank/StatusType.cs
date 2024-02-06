@@ -6,12 +6,12 @@ namespace Domain.Concrete.Schema.Bank;
 /// </summary>
 public class StatusType : BaseEntity
 {
-    StatusType()
+    public StatusType()
     {
-        Type = string.Empty;
+        
     }
 
     public virtual int ID { get; set; }
     public virtual string Type { get; set; }
-    public virtual List<Status> Status { get; set; }
+    public virtual ICollection<Status> Status { get; set; }
 }

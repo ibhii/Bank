@@ -3,9 +3,9 @@ using Domain.Contract.Base;
 
 namespace Domain.Contract.Schema.Bank;
 /// <summary>
-/// موجودیت یادداشت ها
+/// موجودیت نقش های سیستم
 /// </summary>
-public interface INotsRepository : IBaseRepository<Not>
+public interface IBankRoleRepository : IBaseRepository<Role>
 {
     
 }

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
-<class name="MemberOf" table="MemberOf" schema="dbo" Guid="6e8f7456-3d17-4319-b8c1-a35e6a7c23f5">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="57300391-fefc-4907-a41b-2f82f104a323">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+				   namespace="Domain.Concrete.Schema.Bank" >
+<class name="MemberOf" table="MemberOf" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
       <generator class="identity" />
     </id>
-    <property name="Date" type="DateTime" nullable="true" ValidateRequired="false" Guid="ad43d66e-ea0c-4e13-bdd5-a492848d398f">
-      <column name="Date" not-null="false" sql-type="date" unicode="false" />
+    <property name="Date" type="DateTime"   >
+      <column name="Date" not-null="false" sql-type="date"  />
     </property>
-    <many-to-one name="Cofer" class="Cofer" AssociationGuid="1be3eaeb-fc11-432e-886a-211a34e6797a" Guid="a8b4d861-f473-4c84-9e24-f0636e9a09ae">
-      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Cofer" class="Cofer"  >
+      <column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="Role" class="Role" AssociationGuid="78cff5b4-78c8-4312-a24b-95cc8186189f" Guid="9adbe917-a3b1-4558-800a-4b7eba091632">
-      <column name="RoleID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Role" class="Role"  >
+      <column name="RoleID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="Status" class="Status" AssociationGuid="d8301f50-cc3a-466d-85ce-42ca6984369f" Guid="22030ce9-e103-49a3-a041-8b8af63c005f">
-      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="Status" class="Status"  >
+      <column name="Status" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
-    <many-to-one name="User" class="User" AssociationGuid="2c740ba8-0992-49f0-bb84-a4e508b15905" Guid="c8638e47-cbbc-4a88-9999-1462f143af42">
-      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <many-to-one name="User" class="User"  >
+      <column name="UserID" not-null="false" precision="10" scale="0" sql-type="int"  />
     </many-to-one>
   </class>
 

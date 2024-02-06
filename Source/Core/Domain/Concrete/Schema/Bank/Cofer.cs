@@ -9,21 +9,19 @@ public class Cofer : BaseEntity
 {
     public Cofer()
     {
-        CoferName = string.Empty;
-        Description = string.Empty;
-        Status = null;
+        
     }
 
     public virtual int ID { get; set; }
     public virtual string CoferName { get; set; }
-    public virtual User Admin { get; set; }
+    public virtual User User { get; set; }
     public virtual string Description { get; set; }
     public virtual Status? Status { get; set; }
-    public virtual List<MemberOf> MemberOf { get; set; }
-    public virtual List<Message> Message { get; set; }
-    public virtual List<Installment> Installments { get; set; }
-    public virtual List<Loan> Loans { get; set; }
-    public virtual List<Payment> Payment { get; set; }
+    public virtual ICollection<MemberOf> MemberOf { get; set; }
+    public virtual ICollection<Message> Message { get; set; }
+    public virtual ICollection<Installment> Installments { get; set; }
+    public virtual ICollection<Loan> Loan { get; set; }
+    public virtual ICollection<Payment> Payment { get; set; }
 
 
 

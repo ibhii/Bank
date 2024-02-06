@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
 				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
-<class name="PaymentType" table="PaymentType" schema="dbo" Guid="a86e3972-0e33-4582-8d76-74d39ae90662">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="6b124cd7-ade7-4f78-963a-073cd509615c">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+				   namespace="Domain.Concrete.Schema.Bank" >
+<class name="PaymentType" table="PaymentType" schema="dbo" >
+    <id name="ID" type="Int32"  >
+      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"  />
       <generator class="identity" />
     </id>
-    <property name="Type" type="Int32" nullable="true" ValidateRequired="false" Guid="3613bb59-94c0-497c-a8cd-1ca5cee6af43">
-      <column name="Type" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+    <property name="Type" type="Int32"   >
+      <column name="Type" not-null="false" precision="10" scale="0" sql-type="int"  />
     </property>
-    <set name="Payment" inverse="true" generic="true" AssociationGuid="8e6428d5-d229-49ee-bdb5-61e2aa731426" Guid="b3780461-dab2-48ed-941a-e8cc3d3f7661">
+    <set name="Payment" inverse="true" generic="true"  >
       <key>
         <column name="PaymentType" />
       </key>

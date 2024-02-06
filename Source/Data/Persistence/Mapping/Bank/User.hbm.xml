@@ -1,108 +1,102 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
-				   assembly="Domain"
-				   namespace="Domain.Concrete.Schema.HR" >
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain.Concrete.Schema.Bank">
 
- <class name="User" table="`User`" schema="dbo" Guid="810d4f9d-eddb-4fe3-bb21-50b231000557">
-    <id name="ID" type="Int32" ValidateRequired="true" Guid="ece3f55c-17e5-4c1d-8047-b0e5fdafd9c0">
-      <column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
-      <generator class="identity" />
-    </id>
-    <property name="Name" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="0ef30364-f185-42fc-813d-4cbc044de8b3">
-      <column name="Name" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="LastName" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="ac63b54c-4fca-4af4-a03e-c9325a013a77">
-      <column name="LastName" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="FatherName" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="e053652c-acc4-4fc3-ba91-695d88cd95d5">
-      <column name="FatherName" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="NationalID" type="Int32" nullable="true" ValidateRequired="false" Guid="2e1fe77b-4778-4e31-972a-16275a74fa05">
-      <column name="NationalID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
-    </property>
-    <property name="BirthDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="77181afd-9766-4fdb-bc07-9728f672139c">
-      <column name="BirthDate" not-null="false" sql-type="date" unicode="false" />
-    </property>
-    <property name="PhoneNumber" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="4dc59264-f548-4781-9025-78d278cfa9e9">
-      <column name="PhoneNumber" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="Address" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="3dac9bcb-fbaf-4e2b-a0f3-a3c3aace5264">
-      <column name="Address" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="Job" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="89b12a47-78de-4796-994a-dfe7c1a0a570">
-      <column name="Job" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
-    </property>
-    <property name="CreateDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="fa672663-035a-4c50-91f3-709749b4da86">
-      <column name="CreateDate" not-null="false" sql-type="date" unicode="false" />
-    </property>
-    <many-to-one name="Access" class="Access" AssociationGuid="12042452-2c5f-4949-b4ce-6e4413a65864" Guid="b1ae8519-04b3-4b57-8fbb-fa434b7c6f57">
-      <column name="Accessibility" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
-    </many-to-one>
-    <many-to-one name="User_Presenter" class="User" AssociationGuid="5bdda56b-3b03-4d2e-a020-48ff66b9f799" Guid="26becc28-dc52-4af9-aa37-5574a380c111">
-      <column name="Presenter" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
-    </many-to-one>
-    <set name="Cofer" inverse="true" generic="true" AssociationGuid="ca4e5e6c-54dc-4e2f-b820-36b77036a06d" Guid="fd82278e-3f65-4e4c-a864-2751c97501d8">
-      <key>
-        <column name="Admin" />
-      </key>
-      <one-to-many class="Cofer" />
-    </set>
-    <set name="Installment" inverse="true" generic="true" AssociationGuid="707e6b2d-9368-4def-bbe9-259959f9eea5" Guid="fce86998-782d-40d2-8ccb-87be5a0dc575">
-      <key>
-        <column name="UerID" />
-      </key>
-      <one-to-many class="Installment" />
-    </set>
-    <set name="Loan" inverse="true" generic="true" AssociationGuid="3917ff42-664a-4508-b5f7-4903c06ef568" Guid="00595f74-7a73-41dd-baaa-cd5c9da99076">
-      <key>
-        <column name="Admin" />
-      </key>
-      <one-to-many class="Loan" />
-    </set>
-    <set name="MemberOf" inverse="true" generic="true" AssociationGuid="2c740ba8-0992-49f0-bb84-a4e508b15905" Guid="465996aa-efb0-4ad9-8aa1-bef280ba5888">
-      <key>
-        <column name="UserID" />
-      </key>
-      <one-to-many class="MemberOf" />
-    </set>
-    <set name="Message_UserReq" inverse="true" generic="true" AssociationGuid="f4cd1f31-256b-4fb3-a703-37458d5af2a0" Guid="b8699326-733c-4108-8965-68a327ca1d89">
-      <key>
-        <column name="UserReq" />
-      </key>
-      <one-to-many class="Message" />
-    </set>
-    <set name="Message_UserRes" inverse="true" generic="true" AssociationGuid="b6680e94-ce26-48b0-9a12-4ba86d82db60" Guid="8928bdfd-913d-46c3-bc15-0a00a595b789">
-      <key>
-        <column name="UserRes" />
-      </key>
-      <one-to-many class="Message" />
-    </set>
-    <set name="Not" inverse="true" generic="true" AssociationGuid="dd1dfe17-793c-44f0-b07b-65c94c7bdd8c" Guid="5b4d8ddb-e893-4215-8fe1-031747232d26">
-      <key>
-        <column name="UserID" />
-      </key>
-      <one-to-many class="Not" />
-    </set>
-    <one-to-one name="Payment" class="Payment" AssociationGuid="1256c3eb-15ef-4cf1-962b-f2d408bac3f3" Guid="8428ae6e-f3cb-477c-8e19-2cdc7a1108d0" />
-    <set name="User_Presenter1" inverse="true" generic="true" AssociationGuid="5bdda56b-3b03-4d2e-a020-48ff66b9f799" Guid="d923c0b2-4334-462b-b01a-ef29c17edab0">
-      <key>
-        <column name="Presenter" />
-      </key>
-      <one-to-many class="User" />
-    </set>
-    <set name="UserAccount" inverse="true" generic="true" AssociationGuid="03b5b875-1417-4459-ac6b-b4035cf9a1cb" Guid="84e14fa5-7833-4ba9-8251-e14682e6e663">
-      <key>
-        <column name="UserID" />
-      </key>
-      <one-to-many class="UserAccount" />
-    </set>
-    <set name="UserPassword" inverse="true" generic="true" AssociationGuid="491b80eb-b534-4c16-8f7a-1a8927c06c84" Guid="2ee135f3-d889-482d-8190-5a29a30b3f4f">
-      <key>
-        <column name="UserID" />
-      </key>
-      <one-to-many class="UserPassword" />
-    </set>
-  </class>
+    <class name="User" table="`User`" schema="dbo">
+        <id name="ID" type="Int32">
+            <column name="ID" not-null="true" precision="10" scale="0" sql-type="int"/>
+            <generator class="identity"/>
+        </id>
+        <property name="Name" type="String">
+            <column name="Name" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="LastName" type="String">
+            <column name="LastName" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="FatherName" type="String">
+            <column name="FatherName" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="NationalID" type="Int32">
+            <column name="NationalID" not-null="false" precision="10" scale="0" sql-type="int"/>
+        </property>
+        <property name="BirthDate" type="DateTime">
+            <column name="BirthDate" not-null="false" sql-type="date"/>
+        </property>
+        <property name="PhoneNumber" type="String">
+            <column name="PhoneNumber" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="Address" type="String">
+            <column name="Address" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="Job" type="String">
+            <column name="Job" not-null="false" length="50" sql-type="nvarchar"/>
+        </property>
+        <property name="CreateDate" type="DateTime">
+            <column name="CreateDate" not-null="false" sql-type="date"/>
+        </property>
+        <many-to-one name="Access" class="Access">
+            <column name="Accessibility" not-null="false" precision="10" scale="0" sql-type="int"/>
+        </many-to-one>
+        <many-to-one name="User_Presenter" class="User">
+            <column name="Presenter" not-null="false" precision="10" scale="0" sql-type="int"/>
+        </many-to-one>
+        <set name="Cofer" inverse="true" generic="true">
+            <key>
+                <column name="Admin"/>
+            </key>
+            <one-to-many class="Cofer"/>
+        </set>
+        <set name="Installment" inverse="true" generic="true">
+            <key>
+                <column name="UerID"/>
+            </key>
+            <one-to-many class="Installment"/>
+        </set>
+        <set name="Loan" inverse="true" generic="true">
+            <key>
+                <column name="Admin"/>
+            </key>
+            <one-to-many class="Loan"/>
+        </set>
+        <set name="MemberOf" inverse="true" generic="true">
+            <key>
+                <column name="UserID"/>
+            </key>
+            <one-to-many class="MemberOf"/>
+        </set>
+        <set name="Message_UserReq" inverse="true" generic="true">
+            <key>
+                <column name="UserReq"/>
+            </key>
+            <one-to-many class="Message"/>
+        </set>
+        <set name="Message_UserRes" inverse="true" generic="true">
+            <key>
+                <column name="UserRes"/>
+            </key>
+            <one-to-many class="Message"/>
+        </set>
+        <set name="Not" inverse="true" generic="true">
+            <key>
+                <column name="UserID"/>
+            </key>
+            <one-to-many class="Not"/>
+        </set>
+        <one-to-one name="Payment" class="Payment"/>
+        <set name="UserAccount" inverse="true" generic="true">
+            <key>
+                <column name="UserID"/>
+            </key>
+            <one-to-many class="UserAccount"/>
+        </set>
+        <set name="UserPassword" inverse="true" generic="true">
+            <key>
+                <column name="UserID"/>
+            </key>
+            <one-to-many class="UserPassword"/>
+        </set>
+    </class>
 
 
 </hibernate-mapping>

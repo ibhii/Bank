@@ -1,7 +1,6 @@
 ﻿using Application.Base;
 using Domain.Concrete.Schema.Bank;
 using Domain.Contract.Schema.Bank;
-using Domain.Contract.Schema.HR;
 using NHibernate;
 
 namespace Application.Schema.Bank;

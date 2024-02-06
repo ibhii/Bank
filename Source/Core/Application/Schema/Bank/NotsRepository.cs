@@ -7,7 +7,7 @@ namespace Application.Schema.Bank;
 /// <summary>
 /// موجودیت یادداشت ها
 /// </summary>
-public class NotsRepository: BaseRepository<Nots>, INotsRepository
+public class NotsRepository: BaseRepository<Not>, INotsRepository
 {
     public NotsRepository(ISession session) : base(session)
     {

@@ -11,8 +11,10 @@ public class UserController : Controller
         _unitOfWork = unitOfWork;
     }
 
-    public void Test()
+    public JsonResult GetById(int id)
     {
-        var users = _unitOfWork.BankUserRepository.GetAll().ToList();
+        var role = _unitOfWork.UserRepository.Get(id);
+        return Json(role);
     }
+
 }
