@@ -12,4 +12,5 @@ public class NotsRepository: BaseRepository<Not>, INotsRepository
     public NotsRepository(ISession session) : base(session)
     {
     }
+    
 }

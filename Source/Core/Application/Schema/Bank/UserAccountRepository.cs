@@ -4,10 +4,11 @@ using Domain.Contract.Schema.Bank;
 using NHibernate;
 
 namespace Application.Schema.Bank;
+
 /// <summary>
 /// موجودیت حساب کابری کاربران سیستم
 /// </summary>
-public class UserAccountRepository: BaseRepository<UserAccount>, IUserAccountRepository
+public class UserAccountRepository : BaseRepository<UserAccount>, IUserAccountRepository
 {
     public UserAccountRepository(ISession session) : base(session)
     {

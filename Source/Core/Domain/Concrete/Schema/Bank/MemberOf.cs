@@ -6,11 +6,6 @@ namespace Domain.Concrete.Schema.Bank;
 /// </summary>
 public class MemberOf : BaseEntity
 {
-    public MemberOf()
-    {
-        
-    }
-    
     public virtual int ID { get; set; }
     public virtual Cofer? Cofer { get; set; }
     public virtual User? User { get; set; }

@@ -12,4 +12,7 @@ public class StatusRepository: BaseRepository<Status>, IStatusRepository
     public StatusRepository(ISession session) : base(session)
     {
     }
+
+    
+    
 }

@@ -17,7 +17,7 @@ public interface IUnitOfWork : IDisposable
     INotsRepository NotsRepository { get; }
     IPaymentRepository PaymentRepository { get; }
     IPaymentTypeRepository PaymentTypeRepository { get; }
-    IBankRoleRepository BankRoleRepository{ get; }
+    IRoleRepository RoleRepository{ get; }
     IStatusRepository StatusRepository { get; }
     IStatusTypeRepository StatusTypeRepository { get; }
     IUserAccountRepository UserAccountRepository{ get; }

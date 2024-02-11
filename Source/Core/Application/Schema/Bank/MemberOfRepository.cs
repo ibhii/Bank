@@ -12,4 +12,5 @@ public class MemberOfRepository: BaseRepository<MemberOf>, IMemberOfRepository
     public MemberOfRepository(ISession session) : base(session)
     {
     }
+    
 }

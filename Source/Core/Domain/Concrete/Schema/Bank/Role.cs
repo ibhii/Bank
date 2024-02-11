@@ -6,10 +6,6 @@ namespace Domain.Concrete.Schema.Bank;
 /// </summary>
 public class Role : BaseEntity
 {
-    public Role()
-    {
-    }
-
     public virtual int ID { get; set; }
     public virtual string TItile { get; set; }
     public virtual ICollection<MemberOf> MemberOf{ get; set; }

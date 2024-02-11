@@ -1,18 +1,14 @@
 ﻿using Domain.Concrete.Base;
 
 namespace Domain.Concrete.Schema.Bank;
+
 /// <summary>
- /// موجودیت وام
+/// موجودیت وام
 /// </summary>
 public class Loan : BaseEntity
 {
-    public Loan()
-    {
-        
-    }
-
     public virtual int ID { get; set; }
-    public virtual Cofer? Cofer  { get; set; }
+    public virtual Cofer? Cofer { get; set; }
     public virtual string Name { get; set; }
     public virtual User? User { get; set; }
     public virtual string TotalPrice { get; set; }

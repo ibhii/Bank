@@ -7,21 +7,20 @@ using NHibernate.Linq;
 namespace Application.Schema.Bank;
 
 /// <summary>
-/// موجودیت صندوقدار
+/// موجودیت نقش های سیستم
 /// </summary>
-public class CoferRepository : BaseRepository<Cofer>, ICoferRepository
+public class RoleRepository : BaseRepository<Role>, IRoleRepository
 {
     private readonly ISession _session;
 
-    public CoferRepository(ISession session) : base(session)
+    public RoleRepository(ISession session) : base(session)
     {
         _session = session;
     }
 
     public override async Task<bool> ValidationCheckById(int id)
     {
-        return await _session.Query<Cofer>().Where(c => c.ID == id)
-            .AnyAsync(c => c.CoferName != null && c.Status != null);
+        return await _session.Query<Role>().Where(r => r.ID == id)
+            .AnyAsync(r => r.TItile != null);
     }
-    
 }

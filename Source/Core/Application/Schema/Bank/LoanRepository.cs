@@ -4,12 +4,16 @@ using Domain.Contract.Schema.Bank;
 using NHibernate;
 
 namespace Application.Schema.Bank;
+
 /// <summary>
- /// موجودیت وام
+/// موجودیت وام
 /// </summary>
-public class LoanRepository: BaseRepository<Loan>, ILoanRepository
+public class LoanRepository : BaseRepository<Loan>, ILoanRepository
 {
- public LoanRepository(ISession session) : base(session)
- {
- }
+    public LoanRepository(ISession session) : base(session)
+    {
+    }
+
+  
+
 }

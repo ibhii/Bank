@@ -6,11 +6,6 @@ namespace Domain.Concrete.Schema.Bank;
 /// </summary>
 public class User : BaseEntity
 {
-    public User()
-    {
-       
-    }
-
     public virtual int ID { get; set; }
     public virtual User Presenter { get; set; }
     public virtual string Name { get; set; }

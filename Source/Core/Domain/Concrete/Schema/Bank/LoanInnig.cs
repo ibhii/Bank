@@ -8,10 +8,6 @@ namespace Domain.Concrete.Schema.Bank;
 
 public class LoanInnig : BaseEntity
 {
-    public LoanInnig()
-    {
-        
-    }
 
     public virtual int? ID { get; set; }
     public virtual Installment? Installment { get; set; }

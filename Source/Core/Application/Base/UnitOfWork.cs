@@ -7,7 +7,6 @@ namespace Application.Base;
 
 public class UnitOfWork : IUnitOfWork
 {
-
     private readonly ISessionFactory _sessionFactory;
 
     private readonly ITransaction _transaction;
@@ -25,7 +24,7 @@ public class UnitOfWork : IUnitOfWork
 
     // private IRoleRepository _roleRepository = null!;
     // private IPersonRepository _personRepository = null!;
-    
+
     private ICoferRepository _coferRepository = null!;
     private IUserRepository _userRepository = null!;
     private IAccessRepository _accessRepository = null!;
@@ -37,7 +36,7 @@ public class UnitOfWork : IUnitOfWork
     private INotsRepository _notsRepository = null!;
     private IPaymentRepository _paymentRepository = null!;
     private IPaymentTypeRepository _paymentTypeRepository = null!;
-    private IBankRoleRepository _bankRoleRepository = null!;
+    private IRoleRepository _roleRepository = null!;
     private IStatusRepository _statusRepository = null!;
     private IStatusTypeRepository _statusTypeRepository = null!;
     private IUserAccountRepository _userAccountRepository = null!;
@@ -69,8 +68,8 @@ public class UnitOfWork : IUnitOfWork
             return _accessRepository;
         }
     }
-    
-    public ICoferRepository CoferRepository 
+
+    public ICoferRepository CoferRepository
     {
         get
         {
@@ -78,7 +77,7 @@ public class UnitOfWork : IUnitOfWork
             return _coferRepository;
         }
     }
-    
+
     public IInstallmentRepository InstallmentRepository
     {
         get
@@ -87,9 +86,9 @@ public class UnitOfWork : IUnitOfWork
             return _installmentRepository;
         }
     }
-    
+
     public ILateLoanRepository LateLoanRepository
-    
+
     {
         get
         {
@@ -97,7 +96,7 @@ public class UnitOfWork : IUnitOfWork
             return _lateLoanRepository;
         }
     }
-    
+
     public ILoanRepository LoanRepository
     {
         get
@@ -106,7 +105,7 @@ public class UnitOfWork : IUnitOfWork
             return _loanRepository;
         }
     }
-    
+
     public IMemberOfRepository MemberOfRepository
     {
         get
@@ -115,7 +114,7 @@ public class UnitOfWork : IUnitOfWork
             return _memberOfRepository;
         }
     }
-    
+
     public IMessageRepository MessageRepository
     {
         get
@@ -124,7 +123,7 @@ public class UnitOfWork : IUnitOfWork
             return _messageRepository;
         }
     }
-    
+
     public INotsRepository NotsRepository
     {
         get
@@ -133,8 +132,8 @@ public class UnitOfWork : IUnitOfWork
             return _notsRepository;
         }
     }
-    
-    
+
+
     public IPaymentRepository PaymentRepository
     {
         get
@@ -143,7 +142,7 @@ public class UnitOfWork : IUnitOfWork
             return _paymentRepository;
         }
     }
-    
+
     public IPaymentTypeRepository PaymentTypeRepository
     {
         get
@@ -152,16 +151,16 @@ public class UnitOfWork : IUnitOfWork
             return _paymentTypeRepository;
         }
     }
-    
-    public IBankRoleRepository BankRoleRepository
+
+    public IRoleRepository RoleRepository
     {
         get
         {
-        // _bankRoleRepository ?? = new BankRoleRepository(_session);
-        return _bankRoleRepository;
+            // _bankRoleRepository ?? = new BankRoleRepository(_session);
+            return _roleRepository;
         }
     }
-    
+
     public IStatusRepository StatusRepository
     {
         get
@@ -170,7 +169,7 @@ public class UnitOfWork : IUnitOfWork
             return _statusRepository;
         }
     }
-    
+
     public IStatusTypeRepository StatusTypeRepository
     {
         get
@@ -179,7 +178,7 @@ public class UnitOfWork : IUnitOfWork
             return _statusTypeRepository;
         }
     }
-    
+
     public IUserAccountRepository UserAccountRepository
     {
         get
@@ -188,7 +187,7 @@ public class UnitOfWork : IUnitOfWork
             return _userAccountRepository;
         }
     }
-    
+
     public IUserPasswordRepository UserPasswordRepository
     {
         get
@@ -197,7 +196,7 @@ public class UnitOfWork : IUnitOfWork
             return _userPasswordRepository;
         }
     }
-    
+
     public IUserRepository UserRepository
     {
         get
@@ -232,6 +231,4 @@ public class UnitOfWork : IUnitOfWork
             _transaction.Rollback();
         }
     }
-
-    
 }

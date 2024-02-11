@@ -12,4 +12,5 @@ public class MessageRepository: BaseRepository<Message>, IMessageRepository
     public MessageRepository(ISession session) : base(session)
     {
     }
+    
 }

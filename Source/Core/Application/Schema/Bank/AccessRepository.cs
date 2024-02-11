@@ -8,10 +8,14 @@ namespace Application.Schema.Bank;
 /// <summary>
 /// موجودیت دسترسی 
 /// </summary>
-public class AccessRepository: BaseRepository<Access>, IAccessRepository
+public class AccessRepository : BaseRepository<Access>, IAccessRepository
 {
     public AccessRepository(ISession session) : base(session)
     {
-        
+    }
+
+    public override async Task<bool> ValidationCheckById(int id)
+    {
+        return await base.ValidationCheckById(id);
     }
 }

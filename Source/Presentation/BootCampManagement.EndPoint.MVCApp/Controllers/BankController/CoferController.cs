@@ -3,18 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BootCampManagement.EndPoint.MVCApp.Controllers.BankController;
 
-[Route("User")]
-public class UserController : Controller
+public class CoferController : Controller
 {
     private readonly IUnitOfWork _unitOfWork;
 
-    public UserController(IUnitOfWork unitOfWork)
+    public CoferController(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
 
     /// <summary>
-    /// اطلاعات هر کاربر رو با استفاده از آی دی واکشی می کند
+    /// اطلاعات هر صنوقدار  رو با استفاده از آی دی واکشی می کند
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
@@ -25,7 +24,7 @@ public class UserController : Controller
     }
 
     /// <summary>
-    /// چک می کند که اطلاعات کاربر صحیح وارد شده باشد
+    /// چک می کند که اطلاعات صنوقدار  صحیح وارد شده باشد
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
@@ -43,7 +42,7 @@ public class UserController : Controller
     public async Task<int> GetNextValue()
     {
         
-        return await _unitOfWork.UserRepository.GetNextValue("User");
+        return await _unitOfWork.UserRepository.GetNextValue("Cofer");
     }
-
+    
 }

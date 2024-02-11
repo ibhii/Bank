@@ -12,4 +12,6 @@ public class PaymentRepository: BaseRepository<Payment>, IPaymentRepository
     public PaymentRepository(ISession session) : base(session)
     {
     }
+    
+   
 }

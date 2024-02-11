@@ -5,7 +5,7 @@ namespace Domain.Contract.Schema.Bank;
 /// <summary>
 /// موجودیت نقش های سیستم
 /// </summary>
-public interface IBankRoleRepository : IBaseRepository<Role>
+public interface IRoleRepository : IBaseRepository<Role>
 {
     
 }

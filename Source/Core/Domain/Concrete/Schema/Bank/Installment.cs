@@ -8,11 +8,6 @@ namespace Domain.Concrete.Schema.Bank;
 /// </summary>
 public class Installment : BaseEntity
 {
-    public Installment()
-    {
-       
-    }
-
     public virtual int ID { get; set; }
     public virtual Cofer? CoferID { get; set; }
     public virtual User? User { get; set; }
@@ -24,7 +19,4 @@ public class Installment : BaseEntity
     public virtual string Description { get; set; }
     public virtual ICollection<LateLoan> LateLoan { get; set; }
     public virtual ICollection<LoanInnig> LoanInnig { get; set; }
-
-
 }
- 
